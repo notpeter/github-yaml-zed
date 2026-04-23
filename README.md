@@ -2,7 +2,10 @@
 
 [Zed](https://zed.dev) extension supporting GitHub YAML configuration files.
 
-Features:
+<img width="809" height="256" alt="Screenshot 2026-04-23 at 1 00 30 PM" src="https://github.com/user-attachments/assets/fcb18b20-8b10-47ca-bac2-e6695e485877" />
+
+## Features
+
 - "GitHub YAML" language:
   - [tree-sitter-yaml](https://github.com/zed-industries/tree-sitter-yaml)
   - injection of [rmuir/tree-sitter-ghactions](https://github.com/rmuir/tree-sitter-ghactions) for `${{ }}` blocks
