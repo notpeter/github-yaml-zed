@@ -1,9 +1,5 @@
 use std::{env, fs};
-use zed_extension_api::{
-    self as zed, serde_json,
-    settings::LspSettings,
-    Result,
-};
+use zed_extension_api::{self as zed, serde_json, settings::LspSettings, Result};
 
 const PACKAGE_NAME: &str = "yaml-language-server";
 const SERVER_PATH: &str = "node_modules/yaml-language-server/bin/yaml-language-server";
@@ -139,13 +135,10 @@ impl zed::Extension for GithubActionsExtension {
             "format": { "enable": false }
         });
 
-        if let Ok(lsp_settings) =
-            LspSettings::for_worktree("github-yaml-language-server", worktree)
+        if let Ok(lsp_settings) = LspSettings::for_worktree("github-yaml-language-server", worktree)
         {
             if let Some(user_settings) = lsp_settings.settings {
-                if let Some(user_yaml) =
-                    user_settings.get("yaml").cloned()
-                {
+                if let Some(user_yaml) = user_settings.get("yaml").cloned() {
                     merge(&mut yaml_settings, user_yaml);
                 } else {
                     merge(&mut yaml_settings, user_settings);
