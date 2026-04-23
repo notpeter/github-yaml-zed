@@ -22,6 +22,7 @@
   - [GitHub Issue Configuration](https://json.schemastore.org/github-issue-config.json): `.github/ISSUE_TEMPLATE/config.yml`
   - [GitHub Release Configuration](https://json.schemastore.org/github-release-config.json): `.github/release.yml`
   - [GitHub Dependabot Configuration](https://www.schemastore.org/dependabot-2.0.json): `.github/dependabot.yml`
+  - [Citation File Format](https://github.com/citation-file-format/citation-file-format): `CITATION.cff`
 
 ## Installation
 
@@ -45,7 +46,8 @@ following to your Zed `settings.json`:
       "**/.github/{ISSUE_TEMPLATE,DISCUSSION_TEMPLATE}/*.yml",
       "**/.github/{FUNDING,release}.yml",
       "**/.github/dependabot.{yml,yaml}",
-      "**/workflow-templates/*.yml"
+      "**/workflow-templates/*.yml",
+      "**/CITATION.cff"
     ]
   }
 }
