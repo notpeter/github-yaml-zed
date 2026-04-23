@@ -18,9 +18,12 @@ for GitHub Actions workflow files.
   [`yaml-language-server`](https://github.com/redhat-developer/yaml-language-server)
   for `GitHub Workflows` buffers, pre-configured with the
   [SchemaStore](https://www.schemastore.org/) JSON Schemas for
-  GitHub Actions workflows (`github-workflow.json`) and composite/custom
-  actions (`github-action.json`). This gives you completion, hover docs,
-  and validation without any manual LSP setup.
+  GitHub Actions workflows (`github-workflow.json`), composite/custom
+  actions (`github-action.json`), and other GitHub YAML config files
+  such as `.github/dependabot.yml`, `.github/FUNDING.yml`,
+  issue forms, discussion templates, and release config. This gives
+  you completion, hover docs, and validation without any manual LSP
+  setup.
 
 ## Installation
 
@@ -67,9 +70,8 @@ schemas. For example:
       "settings": {
         "yaml": {
           "schemas": {
-            "https://json.schemastore.org/dependabot-2.0.json": [
-              ".github/dependabot.yml",
-              ".github/dependabot.yaml"
+            "https://example.com/my-custom-schema.json": [
+              ".github/my-custom-file.yml"
             ]
           },
           "format": { "enable": true }

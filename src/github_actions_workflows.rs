@@ -127,6 +127,10 @@ impl zed::Extension for GithubActionsExtension {
                 ],
                 "https://json.schemastore.org/github-release-config.json": [
                     ".github/release.yml"
+                ],
+                "https://json.schemastore.org/dependabot-2.0.json": [
+                    ".github/dependabot.yml",
+                    ".github/dependabot.yaml"
                 ]
             },
             "validate": true,
