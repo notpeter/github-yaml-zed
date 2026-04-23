@@ -1,0 +1,11 @@
+id = "github-actions-workflows"
+name = "GitHub Workflows"
+version = "0.0.1"
+schema_version = 1
+authors = ["Peter Tripp <notpeter@users.noreply.github.com>"]
+description = "Language support for GitHub Actions workflow files."
+repository = "https://github.com/notpeter/github-actions-workflows-zed"
+
+[grammars.yaml]
+repository = "https://github.com/zed-industries/tree-sitter-yaml"
+commit = "baff0b51c64ef6a1fb1f8390f3ad6015b83ec13a"
