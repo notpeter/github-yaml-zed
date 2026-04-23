@@ -8,7 +8,7 @@ for GitHub Actions workflow files.
 - A language named **GitHub Workflows** backed by Zed's built-in
   `tree-sitter-yaml` grammar (no extra YAML grammar is bundled or compiled).
 - Syntax highlighting, bracket matching, outline, and text objects for YAML.
-- Injection of [`tree-sitter-ghactions`](https://github.com/rmuir/tree-sitter-ghactions)
+- Injection of [`rmuir/tree-sitter-ghactions`](https://github.com/rmuir/tree-sitter-ghactions)
   inside any YAML string containing a `${{ ... }}` expression, giving rich
   highlighting of operators, identifiers, context accessors
   (`github`, `env`, `secrets`, ...), and builtin functions
