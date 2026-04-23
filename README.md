@@ -12,6 +12,7 @@
   - injection of [tree-sitter-bash](https://github.com/tree-sitter/tree-sitter-bash) for `run:` blocks
   - injection of [tree-sitter-javascript](https://github.com/tree-sitter/tree-sitter-javascript) for [actions/github-script](https://github.com/actions/github-script) `script:` blocks
   - injection of [tree-sitter-nim-format-string](https://github.com/aMOPel/tree-sitter-nim-format-string) for format placeholders: `${{ format('hi {0}', 'Bob') }}`
+- Adds `CODEOWNERS` language via [tree-sitter-codeowners](https://github.com/lukasmalkmus/tree-sitter-codeowners) for `CODEOWNERS` files (e.g. `.github/CODEOWNERS`, `docs/CODEOWNERS`, root `CODEOWNERS`)
 - JSON Schemas with `yaml-language-server` to support auto-complete, validation and hover docs for:
   - [GitHub Workflows](https://json.schemastore.org/github-workflow.json): `.github/workflows/*.{yml,yaml}`, `workflow-templates/*.yml`
   - [GitHub Actions](https://json.schemastore.org/github-action.json): `.github/actions/**/action.{yml,yaml}`
