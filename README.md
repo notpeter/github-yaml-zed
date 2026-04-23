@@ -6,13 +6,13 @@
 
 ## Features
 
-- "GitHub YAML" language:
-  - [zed-industries/tree-sitter-yaml](https://github.com/zed-industries/tree-sitter-yaml): identical to Zed YAML language
-  - injection of [rmuir/tree-sitter-ghactions](https://github.com/rmuir/tree-sitter-ghactions) for `${{ }}` blocks
+- Adds `GitHub YAML` language:
+  - base [tree-sitter-yaml](https://github.com/zed-industries/tree-sitter-yaml) identical to Zed YAML language
+  - injection of [tree-sitter-ghactions](https://github.com/rmuir/tree-sitter-ghactions) for `${{ }}` blocks
   - injection of [tree-sitter-bash](https://github.com/tree-sitter/tree-sitter-bash) for `run:` blocks
   - injection of [tree-sitter-javascript](https://github.com/tree-sitter/tree-sitter-javascript) for [actions/github-script](https://github.com/actions/github-script) `script:` blocks
-  - injection of [aMOPel/tree-sitter-nim-format-string] for format placeholders: `${{ format('hello {0}', github.actor) }}`
-- JSON Schema registration with yaml-language-server supporting Auto-complete / Validation / Hover docs:
+  - injection of [tree-sitter-nim-format-string](https://github.com/aMOPel/tree-sitter-nim-format-string) for format placeholders: `${{ format('hi {0}', github.actor) }}`
+- JSON Schemas with `yaml-language-server` to support auto-complete, validation and hover docs for:
   - [GitHub Workflows](https://json.schemastore.org/github-workflow.json): `.github/workflows/*.{yml,yaml}`, `workflow-templates/*.yml`
   - [GitHub Actions](https://json.schemastore.org/github-action.json): `.github/actions/**/action.{yml,yaml}`
   - [GitHub Funding](https://json.schemastore.org/github-funding.json): `.github/FUNDING.yml`
@@ -24,14 +24,16 @@
 
 ## Installation
 
-Open `zed: extensions` from the command palette in Zed and search for "GitHub Workflows"
+Open `zed: extensions` from the command palette in Zed and search for `GitHub YAML`
 
 Or clone this repository and using `zed: install dev extension`.
 
 ## Required Settings
 
-To associate GitHub Actions workflow files with this language, add the
+To associate `GitHub YAML` language with your `.github/*` files add the
 following to your Zed `settings.json`:
+
+(`zed: open settings file` from the command palette)
 
 ```json
 {
