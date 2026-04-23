@@ -9,7 +9,8 @@
 - Adds `GitHub YAML` language:
   - base [tree-sitter-yaml](https://github.com/zed-industries/tree-sitter-yaml) identical to Zed YAML language
   - injection of [tree-sitter-ghactions](https://github.com/rmuir/tree-sitter-ghactions) for `${{ }}` blocks
-  - injection of [tree-sitter-bash](https://github.com/tree-sitter/tree-sitter-bash) for `run:` blocks
+  - injection of [tree-sitter-bash](https://github.com/tree-sitter/tree-sitter-bash) for `run:` blocks (default)
+  - shell-aware `run:` injection when a sibling `shell:` is set — `python` (built-in), `pwsh`/`powershell` ([wingyplus/zed-powershell](https://github.com/wingyplus/zed-powershell)), `nu` ([zed-extensions/nu](https://github.com/zed-extensions/nu)), `fish` ([hasit/zed-fish](https://github.com/hasit/zed-fish)); both literal names and GitHub's `shell: python {0}` custom-command form are recognised
   - injection of [tree-sitter-javascript](https://github.com/tree-sitter/tree-sitter-javascript) for [actions/github-script](https://github.com/actions/github-script) `script:` blocks
   - injection of [tree-sitter-nim-format-string](https://github.com/aMOPel/tree-sitter-nim-format-string) for format placeholders: `${{ format('hi {0}', github.actor) }}`
 - JSON Schemas with `yaml-language-server` to support auto-complete, validation and hover docs for:
