@@ -168,6 +168,33 @@ impl zed::Extension for GithubActionsExtension {
 
         Ok(Some(serde_json::json!({ "yaml": yaml_settings })))
     }
+
+    fn language_server_additional_workspace_configuration(
+        &mut self,
+        _language_server_id: &zed::LanguageServerId,
+        target_language_server_id: &zed::LanguageServerId,
+        _worktree: &zed::Worktree,
+    ) -> Result<Option<serde_json::Value>> {
+        if target_language_server_id.as_ref() != "json-language-server" {
+            return Ok(None);
+        }
+        Ok(Some(serde_json::json!({
+            "json": {
+                "schemas": [
+                    {
+                        "fileMatch": [
+                            "renovate.json",
+                            ".github/renovate.json",
+                            ".gitlab/renovate.json",
+                            ".renovaterc",
+                            ".renovaterc.json"
+                        ],
+                        "url": "https://docs.renovatebot.com/renovate-schema.json"
+                    }
+                ]
+            }
+        })))
+    }
 }
 
 zed::register_extension!(GithubActionsExtension);
