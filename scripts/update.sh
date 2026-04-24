@@ -4,7 +4,6 @@
 #   github_workflow   <- zed-industries/zed (generic YAML queries)
 #   ghactions         <- rmuir/tree-sitter-ghactions
 #   nim_format_string <- neovim-treesitter/nvim-treesitter-queries-nim_format_string
-#   codeowners        <- lukasmalkmus/tree-sitter-codeowners
 
 set -euo pipefail
 
@@ -61,13 +60,6 @@ curl -fsSL "${NIM_BASE}/highlights.scm" \
         -e 's|@variable\.member|@number|g' \
         -e 's| @none||g' \
   > "${NIM_DEST}/highlights.scm"
-
-# --- codeowners --------------------------------------------------------------
-CODEOWNERS_BASE="https://raw.githubusercontent.com/lukasmalkmus/tree-sitter-codeowners/main/queries"
-CODEOWNERS_DEST="${ROOT}/languages/codeowners"
-echo "Syncing codeowners from ${CODEOWNERS_BASE}"
-echo "  -> highlights.scm"
-curl -fsSL "${CODEOWNERS_BASE}/highlights.scm" -o "${CODEOWNERS_DEST}/highlights.scm"
 
 echo "Formatting files..."
 ts_query_ls format languages/*/*.scm

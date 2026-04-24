@@ -8,7 +8,6 @@ Extension provides:
 - `yaml-language-server` as `github-yaml-language-server` (`src/github_yaml.rs`)
 - json schema associations for those language servers (`src/github_yaml.rs`)
 - `GitHub Workflow` language for Zed
-- `Code Owners` language for Zed
 
 ## Commands
 
@@ -31,9 +30,6 @@ languages/ghactions: "ghactions" (hidden=true)
 languages/nim_format_string: "nim_format_string" (hidden=true)
   - Parses `{0}`-style placeholders inside ghactions `format()` calls.
   - Upstream is Nim-specific but sufficiently generic for our format-strings
-
-languages/codeowners: "Code Owners"
-  - `CODEOWNERS` files
 
 ### Injection chain
 
