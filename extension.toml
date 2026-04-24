@@ -17,10 +17,3 @@ commit = "d45f75022d147cda056e98bfba68222c9c8eca3a"
 [grammars.codeowners]
 repository = "https://github.com/lukasmalkmus/tree-sitter-codeowners"
 commit = "5fc25f72a44d2fe5b9218c712062dcec79dac87e"
-
-[language_servers.github-yaml-language-server]
-name = "GitHub YAML"
-language = "GitHub YAML"
-
-[language_servers.github-yaml-language-server.language_ids]
-"GitHub YAML" = "yaml"

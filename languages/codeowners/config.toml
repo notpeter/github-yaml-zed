@@ -1,4 +1,4 @@
-name = "CODEOWNERS"
+name = "Code Owners"
 grammar = "codeowners"
 path_suffixes = ["CODEOWNERS"]
 line_comments = ["# "]
