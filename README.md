@@ -38,22 +38,22 @@ Or clone this repository and using `zed: install dev extension`.
 To take advantage of the improvements of the `GitHub Workflow` over plain
 YAML we need to add some configuration to your Zed settings.json.
 
-To associate `GitHub YAML` language with your files add the following to your
+To associate `GitHub Workflow` language with your files add the following to your
 Zed `settings.json` by launching  `zed: open settings file` from the command palette.
 
 ```jsonc
 {
+  "languages": {
+    "GitHub Workflow": {
+      "language_servers": ["yaml-language-server"]
+    },
+  },
   "file_types": {
     "GitHub Workflow": [
       "**/.github/workflows/*.{yml,yaml}",
       "**/.github/actions/**/action.{yml,yaml}",
       "**/workflow-templates/*.yml",
     ],
-  },
-  "languages": {
-    "GitHub Workflow": {
-      "language_servers": ["yaml-language-server"]
-    },
   },
 }
 ```
