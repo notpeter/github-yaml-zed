@@ -6,16 +6,17 @@
 
 ## Features
 
-- Adds `GitHub YAML` language:
+- Adds `GitHub Workflow` language:
   - base [tree-sitter-yaml](https://github.com/zed-industries/tree-sitter-yaml) identical to Zed YAML language
   - injection of [tree-sitter-ghactions](https://github.com/rmuir/tree-sitter-ghactions) for `${{ }}` blocks
   - injection of [tree-sitter-bash](https://github.com/tree-sitter/tree-sitter-bash) for `run:` blocks
   - injection of [tree-sitter-javascript](https://github.com/tree-sitter/tree-sitter-javascript) for [actions/github-script](https://github.com/actions/github-script) `script:` blocks
   - injection of [tree-sitter-nim-format-string](https://github.com/aMOPel/tree-sitter-nim-format-string) for format placeholders: `${{ format('hi {0}', 'Bob') }}`
-- Adds `CODEOWNERS` language via [tree-sitter-codeowners](https://github.com/lukasmalkmus/tree-sitter-codeowners) for `CODEOWNERS` files (e.g. `.github/CODEOWNERS`, `docs/CODEOWNERS`, root `CODEOWNERS`)
+- Adds `CODEOWNERS` language
+  - uses [tree-sitter-codeowners](https://github.com/lukasmalkmus/tree-sitter-codeowners)
 - JSON Schemas with `yaml-language-server` to support auto-complete, validation and hover docs for:
-  - [GitHub Workflows](https://json.schemastore.org/github-workflow.json): `.github/workflows/*.{yml,yaml}`, `workflow-templates/*.yml`
-  - [GitHub Actions](https://json.schemastore.org/github-action.json): `.github/actions/**/action.{yml,yaml}`
+  - [GitHub Workflow](https://json.schemastore.org/github-workflow.json): `.github/workflows/*.{yml,yaml}`, `workflow-templates/*.yml`
+  - [GitHub Action](https://json.schemastore.org/github-action.json): `.github/actions/**/action.{yml,yaml}`
   - [GitHub Funding](https://json.schemastore.org/github-funding.json): `.github/FUNDING.yml`
   - [GitHub Discussions Templates](https://json.schemastore.org/github-discussion.json): `.github/DISCUSSION_TEMPLATE/*.yml`
   - [GitHub Issue Templates](https://json.schemastore.org/github-issue-forms.json): `.github/ISSUE_TEMPLATE/*.yml`
@@ -26,29 +27,51 @@
 
 ## Installation
 
-Open `zed: extensions` from the command palette in Zed and search for `GitHub YAML`
+Open `zed: extensions` from the command palette in Zed and search for `GitHub YAML`,
+
+Or click  this link [zed://extension/github-yaml](zed://extension/github-yaml)
 
 Or clone this repository and using `zed: install dev extension`.
 
 ## Required Settings
 
-To associate `GitHub YAML` language with your `.github/*` files add the
-following to your Zed `settings.json`:
+To take advantage of the improvements of the `GitHub Workflow` over plain
+YAML we need to add some configuration to your Zed settings.json.
 
-(`zed: open settings file` from the command palette)
+To associate `GitHub Workflow` language with your files add the following to your
+Zed `settings.json` by launching  `zed: open settings file` from the command palette.
+
+```jsonc
+{
+  "file_types": {
+    "GitHub Workflow": [
+      "**/.github/workflows/*.{yml,yaml}",
+      "**/.github/actions/**/action.{yml,yaml}",
+      "**/workflow-templates/*.yml",
+    ],
+  },
+}
+```
+
+## Recommended Companion Extension
+
+I also recommend the [Git Firefly extension](https://github.com/zed-extensions/git_firefly)
+which provides tree-sitters for the following:
+
+- Git Attributes: .gitattributes, .git/info/attributes, etc
+- Git Config: .gitconfig, .gitmodules, .lfsconfig, config.worktree
+- Git Ignore: .gitignore, .dockerignore, .npmignore, .prettierignore, etc
+- Git Rebase: git-rebase-todo
+
+Click here: [zed://extension/git-firefly](zed://extension/git-firefly) to install and then add the following settings:
 
 ```json
 {
   "file_types": {
-    "GitHub YAML": [
-      "**/.github/workflows/*.{yml,yaml}",
-      "**/.github/actions/**/action.{yml,yaml}",
-      "**/.github/{ISSUE_TEMPLATE,DISCUSSION_TEMPLATE}/*.yml",
-      "**/.github/{FUNDING,release}.yml",
-      "**/.github/dependabot.{yml,yaml}",
-      "**/workflow-templates/*.yml",
-      "**/CITATION.cff"
-    ]
+    // Git Firefly extension languages
+    "Git Attributes": ["**/{git,.git,.git/info}/attributes"],
+    "Git Config": ["*.gitconfig", "**/{git,.git/modules,.git/modules/*}/config"],
+    "Git Ignore": ["**/{git,.git}/ignore", "**/.git/info/exclude"],
   }
 }
 ```
@@ -60,7 +83,7 @@ With this, editors configured with `yaml-language-server` (Zed, NeoVim, VSCode, 
 get automatic schema association with schemas from [JSON SchemaStore](https://schemastore.org).
 Make sure to substitue the correct Schema type for the file in question from the list above.
 
-For a GitHub Workflow file, `**/.github/workflows/*.yml` use:
+E.g. For a GitHub Actions Workflow file, `**/.github/workflows/*.yml` use:
 
 ```yaml
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
@@ -69,15 +92,11 @@ For a GitHub Workflow file, `**/.github/workflows/*.yml` use:
 ### yaml-language-server settings
 
 The extension registers its own `yaml-language-server` instance under the LSP name `github-yaml-language-server`.
-Zed reserves the bare `yaml-language-server` name for its built-in YAML adapter).
 
 User settings are deep-merged on top of the bundled defaults, so you can add your own
 schemas or disable features without losing the bundled GitHub Actions schemas.
 
-See [Zed YAML Language Docs](https://zed.dev/docs/languages/yaml) and
-[yaml-language-server settings docs](https://github.com/redhat-developer/yaml-language-server?tab=readme-ov-file#language-server-settings)
-for supported settings.
-
+For example:
 ```json
 {
   "lsp": {
@@ -85,9 +104,8 @@ for supported settings.
       "settings": {
         "yaml": {
           "schemas": {
-            "https://json.schemastore.org/dependabot-2.0.json": [
-              ".github/dependabot.yml",
-              ".github/dependabot.yaml"
+            "https://json.schemastore.org/whatever.json": [
+              "whatever/*.yml",
             ]
           },
           "format": { "enable": true }
@@ -97,6 +115,10 @@ for supported settings.
   }
 }
 ```
+
+See [Zed YAML Language Docs](https://zed.dev/docs/languages/yaml) and
+[yaml-language-server settings docs](https://github.com/redhat-developer/yaml-language-server?tab=readme-ov-file#language-server-settings)
+for supported settings.
 
 ## License
 

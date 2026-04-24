@@ -1,5 +1,6 @@
 ; Comments
 (comment) @comment
+
 (comment_text) @comment
 
 ; Section headers

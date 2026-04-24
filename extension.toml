@@ -20,7 +20,7 @@ commit = "5fc25f72a44d2fe5b9218c712062dcec79dac87e"
 
 [language_servers.github-yaml-language-server]
 name = "GitHub YAML"
-language = "GitHub YAML"
+language = "GitHub Workflow"
 
 [language_servers.github-yaml-language-server.language_ids]
 "GitHub YAML" = "yaml"
