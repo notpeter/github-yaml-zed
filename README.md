@@ -24,6 +24,7 @@
   - [GitHub Release Configuration](https://json.schemastore.org/github-release-config.json): `.github/release.yml`
   - [GitHub Dependabot Configuration](https://www.schemastore.org/dependabot-2.0.json): `.github/dependabot.yml`
   - [Citation File Format](https://github.com/citation-file-format/citation-file-format): `CITATION.cff`
+  - [GitLab CI](https://gitlab.com/gitlab-org/gitlab-foss/-/raw/master/app/assets/javascripts/editor/schema/ci.json): `.gitlab-ci.{yml,yaml}`, `*.gitlab-ci.{yml,yaml}`
 
 ## Installation
 
