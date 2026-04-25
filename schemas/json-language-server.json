@@ -27,6 +27,10 @@
       {
         "fileMatch": [".prettierrc.json"],
         "url": "https://json.schemastore.org/prettierrc.json"
+      },
+      {
+        "fileMatch": ["biome.json", "biome.jsonc"],
+        "url": "https://biomejs.dev/schemas/latest/schema.json"
       }
     ]
   }

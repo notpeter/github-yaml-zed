@@ -34,6 +34,7 @@
   - [MkDocs](https://json.schemastore.org/mkdocs-1.6.json): `mkdocs.{yml,yaml}`
   - [Renovate](https://docs.renovatebot.com/renovate-schema.json): `renovate.json`
   - [Prettier](https://json.schemastore.org/prettierrc.json): `.prettierrc`, `.prettierrc.{json,yml,yaml}`
+  - [Biome](https://biomejs.dev/schemas/latest/schema.json): `biome.{json,jsonc}`
 
 ## Installation
 
