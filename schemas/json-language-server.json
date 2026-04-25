@@ -23,6 +23,10 @@
       {
         "fileMatch": ["vercel.json"],
         "url": "https://openapi.vercel.sh/vercel.json"
+      },
+      {
+        "fileMatch": [".prettierrc.json"],
+        "url": "https://json.schemastore.org/prettierrc.json"
       }
     ]
   }

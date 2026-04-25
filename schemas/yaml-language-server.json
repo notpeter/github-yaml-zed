@@ -80,6 +80,11 @@
       "https://json.schemastore.org/mkdocs-1.6.json": [
         "mkdocs.yml",
         "mkdocs.yaml"
+      ],
+      "https://json.schemastore.org/prettierrc.json": [
+        ".prettierrc",
+        ".prettierrc.yml",
+        ".prettierrc.yaml"
       ]
     },
     "validate": true,

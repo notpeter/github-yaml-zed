@@ -33,6 +33,7 @@
   - [Vercel](https://openapi.vercel.sh/vercel.json): `vercel.json`
   - [MkDocs](https://json.schemastore.org/mkdocs-1.6.json): `mkdocs.{yml,yaml}`
   - [Renovate](https://docs.renovatebot.com/renovate-schema.json): `renovate.json`
+  - [Prettier](https://json.schemastore.org/prettierrc.json): `.prettierrc`, `.prettierrc.{json,yml,yaml}`
 
 ## Installation
 
