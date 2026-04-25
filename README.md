@@ -13,7 +13,7 @@
   - injection of [tree-sitter-javascript](https://github.com/tree-sitter/tree-sitter-javascript) for [actions/github-script](https://github.com/actions/github-script) `script:` blocks
   - injection of [tree-sitter-nim-format-string](https://github.com/aMOPel/tree-sitter-nim-format-string) for format placeholders: `${{ format('hi {0}', 'Bob') }}`
 - JSON Schemas with `yaml-language-server` to support auto-complete, validation and hover docs for:
-  - [GitHub Workflow](https://json.schemastore.org/github-workflow.json): `.github/workflows/*.{yml,yaml}`, `workflow-templates/*.yml`
+  - [GitHub Workflow](https://json.schemastore.org/github-workflow.json): `.github/workflows/*.{yml,yaml}`
   - [GitHub Action](https://json.schemastore.org/github-action.json): `.github/actions/**/action.{yml,yaml}`
   - [GitHub Funding](https://json.schemastore.org/github-funding.json): `.github/FUNDING.yml`
   - [GitHub Discussions Templates](https://json.schemastore.org/github-discussion.json): `.github/DISCUSSION_TEMPLATE/*.yml`
@@ -57,7 +57,6 @@ Zed `settings.json` by launching  `zed: open settings file` from the command pal
     "GitHub Workflow": [
       "**/.github/workflows/*.{yml,yaml}",
       "**/.github/actions/**/action.{yml,yaml}",
-      "**/workflow-templates/*.yml",
     ],
   },
 }

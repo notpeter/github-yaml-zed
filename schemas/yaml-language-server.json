@@ -3,8 +3,7 @@
     "schemas": {
       "https://json.schemastore.org/github-workflow.json": [
         ".github/workflows/*.yml",
-        ".github/workflows/*.yaml",
-        "workflow-templates/*.yml"
+        ".github/workflows/*.yaml"
       ],
       "https://json.schemastore.org/github-action.json": [
         ".github/actions/**/action.yml",
